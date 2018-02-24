@@ -11,12 +11,11 @@ There is so much data out on the web, but who wants to copy-and-paste or scrape 
 
 ### Repo structure
 ```
-API_workshop_presentation.ipynb         # notebook used during the hands-on tutorial
-API_codes.ipynb       # notebook containing all the codes
-API_workshop.slides.hmtl         # presentation slides in html
-images/      # contains images for html presentation slides
+API_workshop_presentation.ipynb     # notebook used during the hands-on tutorial
+API_codes.ipynb                     # notebook containing all the codes
+API_workshop.slides.hmtl            # presentation slides in html
+images/                             # contains images for html presentation slides
 ```
-
 
 ### Notes 
 

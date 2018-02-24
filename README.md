@@ -18,7 +18,7 @@ images/                             # contains images for html presentation slid
 ```
 
 ### Notes 
-
+- [NYC Digital Humanities Week Feb 2018](http://dhweek.nycdh.org/event/working-with-open-data-intro-to-apis/)
 - Feel free to fork this notebook as a practical guide to deal with APIs
 
 

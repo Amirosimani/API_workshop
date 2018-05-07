@@ -17,8 +17,11 @@ API_workshop.slides.hmtl            # presentation slides in html
 images/                             # contains images for html presentation slides
 ```
 
+Feel free to fork this notebook as a practical guide to deal with APIs.
+
 ### Notes 
 - [NYC Digital Humanities Week Feb 2018](http://dhweek.nycdh.org/event/working-with-open-data-intro-to-apis/)
-- Feel free to fork this notebook as a practical guide to deal with APIs
+- [Metropolitan Library Council May 2018] (https://www.eventbrite.com/e/working-with-open-data-intro-to-apis-tickets-44552499726)
+
 
 

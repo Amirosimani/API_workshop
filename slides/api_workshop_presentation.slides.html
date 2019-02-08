@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>api_workshop_presentation slides</title>
+<title>API_workshop_presentation slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -11841,7 +11841,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-is-API?">What is API?<a class="anchor-link" href="#What-is-API?">&#182;</a></h2><p><img src="./images/api-explained.png"></p>
+<h2 id="What-is-API?">What is API?<a class="anchor-link" href="#What-is-API?">&#182;</a></h2><p><img src="../images/api-explained.png"></p>
 <p>source: <a href="https://www.humcommerce.com">https://www.humcommerce.com</a></p>
 
 </div>
@@ -11914,25 +11914,12 @@ They expose some of a program's inner workings in a limited way.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="./images/nyt.png"></p>
+<p><img src="../images/nyt.png"></p>
 <p><br/></p>
 <p>Request a key from <a href="https://developer.nytimes.com">https://developer.nytimes.com</a></p>
 
 </div>
 </div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">KEY</span> <span class="o">=</span> <span class="s1">&#39;03ad3061eb13451d84af8c1eb86474f2&#39;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -11973,60 +11960,12 @@ They expose some of a program's inner workings in a limited way.</p>
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># !pip install requests</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="c1"># Set base url path</span>
-<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;http://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">KEY</span><span class="p">)</span>
-
-<span class="c1"># Send a request</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base_url</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Print the status code of the response.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>200
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="./images/status_codes.jpg"></p>
+<p><img src="../images/status_codes.jpg"></p>
 
 </div>
 </div>
@@ -12044,38 +11983,7 @@ The 500 series means "server error" — your request may have been OK, but the s
 </div>
 </div>
 </div>
-</aside></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Trying a wrong URL</span>
-<span class="n">new_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s1">&#39;?abc&#39;</span>
-<span class="n">new_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">new_url</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">new_response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>403
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div><aside class="notes">
+</aside><aside class="notes">
 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -12102,44 +12010,6 @@ The 500 series means "server error" — your request may have been OK, but the s
 
 </div>
 </div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Set up the parameters we want to pass to the API.</span>
-<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;trump+russia&#39;</span><span class="p">],</span> <span class="s1">&#39;fl&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;byline&#39;</span><span class="p">,</span> <span class="s1">&#39;pub_date&#39;</span><span class="p">,</span> <span class="s1">&#39;headline&#39;</span><span class="p">],</span>
-              <span class="s1">&#39;sort&#39;</span><span class="p">:</span> <span class="s1">&#39;newest&#39;</span><span class="p">,</span>
-              <span class="s1">&#39;begin_date&#39;</span><span class="p">:</span> <span class="s1">&#39;20180101&#39;</span><span class="p">,</span> <span class="s1">&#39;end_date&#39;</span><span class="p">:</span> <span class="s1">&#39;20180201&#39;</span><span class="p">,</span>
-             <span class="p">}</span>
-
-
-<span class="c1"># Make a get request with the parameters.</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameters</span><span class="p">)</span>
-
-<span class="c1"># Print the content of the response (the data the server returned)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>200
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -12154,42 +12024,13 @@ The 500 series means "server error" — your request may have been OK, but the s
 
 </div>
 </div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check the retrieved information</span>
-<span class="c1"># print(response.headers)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>b&#39;{&#34;status&#34;:&#34;OK&#34;,&#34;copyright&#34;:&#34;Copyright (c) 2018 The New York Times Company. All Rights Reserved.&#34;,&#34;response&#34;:{&#34;docs&#34;:[{&#34;headline&#34;:{&#34;main&#34;:&#34;Trump, Brenda Fitzgerald, Virginia: Your Wednesday Evening Briefing&#34;,&#34;kicker&#34;:null,&#34;content_kicker&#34;:null,&#34;print_headline&#34;:&#34;Your Evening Briefing&#34;,&#34;name&#34;:null,&#34;seo&#34;:null,&#34;sub&#34;:null},&#34;pub_date&#34;:&#34;2018-01-31T22:57:59+0000&#34;,&#34;byline&#34;:{&#34;original&#34;:&#34;By KAREN ZRAICK and DAVID SCULL&#34;,&#34;person&#34;:[{&#34;firstname&#34;:&#34;Karen&#34;,&#34;middlename&#34;:null,&#34;lastname&#34;:&#34;ZRAICK&#34;,&#34;qualifier&#34;:null,&#34;title&#34;:null,&#34;role&#34;:&#34;reported&#34;,&#34;organization&#34;:&#34;&#34;,&#34;rank&#34;:1},{&#34;firstname&#34;:&#34;David&#34;,&#34;middlename&#34;:null,&#34;lastname&#34;:&#34;SCULL&#34;,&#34;qualifier&#34;:null,&#34;title&#34;:null,&#34;role&#34;:&#34;reported&#34;,&#34;organization&#34;:&#34;&#34;,&#34;rank&#34;:2}],&#34;organization&#34;:null},&#34;score&#34;:0.10885632},{&#34;headline&#34;:{&#34;main&#34;:&#34;Syria\&#39;s Kurds Push US to Stop Turkish Assault on Key Enclave&#34;,&#34;kicker&#34;:null,&#34;content_kicker&#34;:null,&#34;print_headline&#34;:&#34;Syria\&#39;s Kurds Push US to Stop Turkish Assault on Key Enclave&#34;,&#34;name&#34;:null,&#34;seo&#34;:null,&#34;sub&#34;:null},&#34;pub_date&#34;:&#34;2018-01-31T22:24:34+0000&#34;,&#34;byline&#34;:{&#34;original&#34;:&#34;By THE ASSOCIATED PRESS&#34;,&#34;person&#34;:[],&#34;organization&#34;:&#34;THE ASSOCIATED PRESS&#34;},&#34;score&#34;:0.13910355},{&#34;headline&#34;:{&#34;main&#34;:&#34;Trump Asked No. 2 Justice Department Official Where Russia Probe Was Heading: CNN&#34;,&#34;kicker&#34;:null,&#34;content_kicker&#34;:null,&#34;print_headline&#34;:&#34;Trump Asked No. 2 Justice Department Official Where Russia Probe Was Heading: CNN&#34;,&#34;name&#34;:null,&#34;seo&#34;:null,&#34;sub&#34;:null},&#34;pub_date&#34;:&#34;2018-01-31T21:18:38+0000&#34;,&#34;byline&#34;:{&#34;original&#34;:&#34;By REUTERS&#34;,&#34;person&#34;:[],&#34;organization&#34;:&#34;REUTERS&#34;},&#34;score&#34;:1.1794378},{&#34;headline&#34;:{&#34;main&#34;:&#34;House Republican Nunes Calls FBI Objections to Memo \&#39;Spurious\&#39;&#34;,&#34;kicker&#34;:null,&#34;content_kicker&#34;:null,&#34;print_headline&#34;:&#34;House Republican Nunes Calls FBI Objections to Memo \&#39;Spurious\&#39;&#34;,&#34;name&#34;:null,&#34;seo&#34;:null,&#34;sub&#34;:null},&#34;pub_date&#34;:&#34;2018-01-31T20:33:42+0000&#34;,&#34;byline&#34;:{&#34;original&#34;:&#34;By REUTERS&#34;,&#34;person&#34;:[],&#34;organization&#34;:&#34;REUTERS&#34;},&#34;score&#34;:0.34922355},{&#34;headline&#34;:{&#34;main&#34;:&#34;Trump\xe2\x80\x99s Debt to Reagan&#34;,&#34;kicker&#34;:&#34;Op-Ed Contributor&#34;,&#34;content_kicker&#34;:&#34;Op-Ed Contributor&#34;,&#34;print_headline&#34;:&#34;Trump\xe2\x80\x99s Debt to Reagan&#34;,&#34;name&#34;:null,&#34;seo&#34;:null,&#34;sub&#34;:null},&#34;pub_date&#34;:&#34;2018-01-31T19:46:01+0000&#34;,&#34;byline&#34;:{&#34;original&#34;:&#34;By CHARLES R. KESLER&#34;,&#34;person&#34;:[{&#34;firstname&#34;:&#34;Charles&#34;,&#34;middlename&#34;:&#34;R.&#34;,&#34;lastname&#34;:&#34;KESLER&#34;,&#34;qualifier&#34;:null,&#34;title&#34;:null,&#34;role&#34;:&#34;reported&#34;,&#34;organization&#34;:&#34;&#34;,&#34;rank&#34;:1}],&#34;organization&#34;:null},&#34;score&#34;:0.24041903},{&#34;headline&#34;:{&#34;main&#34;:&#34;Right and Left React to Trump\xe2\x80\x99s State of the Union Address&#34;,&#34;kicker&#34;:null,&#34;content_kicker&#34;:null,&#34;print_headline&#34;:&#34;Right and Left React to Trump\xe2\x80\x99s State of the Union Address&#34;,&#34;name&#34;:null,&#34;seo&#34;:null,&#34;sub&#34;:null},&#34;pub_date&#34;:&#34;2018-01-31T19:36:48+0000&#34;,&#34;byline&#34;:{&#34;original&#34;:&#34;By ANNA DUBENKO&#34;,&#34;person&#34;:[{&#34;firstname&#34;:&#34;Anna&#34;,&#34;middlename&#34;:null,&#34;lastname&#34;:&#34;DUBENKO&#34;,&#34;qualifier&#34;:null,&#34;title&#34;:null,&#34;role&#34;:&#34;reported&#34;,&#34;organization&#34;:&#34;&#34;,&#34;rank&#34;:1}],&#34;organization&#34;:null},&#34;score&#34;:0.19757682},{&#34;headline&#34;:{&#34;main&#34;:&#34;Geoff Cameron\xe2\x80\x99s Car-Pool Confessional&#34;,&#34;kicker&#34;:null,&#34;content_kicker&#34;:null,&#34;print_headline&#34;:&#34;He Has Words for Bruce Arena&#34;,&#34;name&#34;:null,&#34;seo&#34;:null,&#34;sub&#34;:null},&#34;pub_date&#34;:&#34;2018-01-31T19:09:20+0000&#34;,&#34;byline&#34;:{&#34;original&#34;:&#34;By MARC STEIN&#34;,&#34;person&#34;:[{&#34;firstname&#34;:&#34;Marc&#34;,&#34;middlename&#34;:null,&#34;lastname&#34;:&#34;STEIN&#34;,&#34;qualifier&#34;:null,&#34;title&#34;:null,&#34;role&#34;:&#34;reported&#34;,&#34;organization&#34;:&#34;&#34;,&#34;rank&#34;:1}],&#34;organization&#34;:null},&#34;score&#34;:0.07729989},{&#34;headline&#34;:{&#34;main&#34;:&#34;F.B.I. Condemns Push to Release Secret Republican Memo&#34;,&#34;kicker&#34;:null,&#34;content_kicker&#34;:null,&#34;print_headline&#34;:&#34;F.B.I. Denounces House G.O.P. Push On Secret Memo&#34;,&#34;name&#34;:null,&#34;seo&#34;:null,&#34;sub&#34;:null},&#34;pub_date&#34;:&#34;2018-01-31T18:12:53+0000&#34;,&#34;byline&#34;:{&#34;original&#34;:&#34;By ADAM GOLDMAN and NICHOLAS FANDOS&#34;,&#34;person&#34;:[{&#34;firstname&#34;:&#34;Adam&#34;,&#34;middlename&#34;:null,&#34;lastname&#34;:&#34;GOLDMAN&#34;,&#34;qualifier&#34;:null,&#34;title&#34;:null,&#34;role&#34;:&#34;reported&#34;,&#34;organization&#34;:&#34;&#34;,&#34;rank&#34;:1},{&#34;firstname&#34;:&#34;Nicholas&#34;,&#34;middlename&#34;:null,&#34;lastname&#34;:&#34;FANDOS&#34;,&#34;qualifier&#34;:null,&#34;title&#34;:null,&#34;role&#34;:&#34;reported&#34;,&#34;organization&#34;:&#34;&#34;,&#34;rank&#34;:2}],&#34;organization&#34;:null},&#34;score&#34;:0.19954076},{&#34;headline&#34;:{&#34;main&#34;:&#34;GOP Congressman Who Led the Benghazi Probe Will Leave House&#34;,&#34;kicker&#34;:null,&#34;content_kicker&#34;:null,&#34;print_headline&#34;:&#34;GOP Congressman Who Led the Benghazi Probe Will Leave House&#34;,&#34;name&#34;:null,&#34;seo&#34;:null,&#34;sub&#34;:null},&#34;pub_date&#34;:&#34;2018-01-31T17:48:33+0000&#34;,&#34;byline&#34;:{&#34;original&#34;:&#34;By THE ASSOCIATED PRESS&#34;,&#34;person&#34;:[],&#34;organization&#34;:&#34;THE ASSOCIATED PRESS&#34;},&#34;score&#34;:0.22039069},{&#34;headline&#34;:{&#34;main&#34;:&#34;From \xe2\x80\x98New American Moment\xe2\x80\x99 to Same Partisan Rancor&#34;,&#34;kicker&#34;:&#34;On Washington&#34;,&#34;content_kicker&#34;:&#34;On Washington&#34;,&#34;print_headline&#34;:&#34;We Now Resume  Regularly Scheduled Programming&#34;,&#34;name&#34;:null,&#34;seo&#34;:null,&#34;sub&#34;:null},&#34;pub_date&#34;:&#34;2018-01-31T17:41:06+0000&#34;,&#34;byline&#34;:{&#34;original&#34;:&#34;By CARL HULSE&#34;,&#34;person&#34;:[{&#34;firstname&#34;:&#34;Carl&#34;,&#34;middlename&#34;:null,&#34;lastname&#34;:&#34;HULSE&#34;,&#34;qualifier&#34;:null,&#34;title&#34;:null,&#34;role&#34;:&#34;reported&#34;,&#34;organization&#34;:&#34;&#34;,&#34;rank&#34;:1}],&#34;organization&#34;:null},&#34;score&#34;:0.24642736}],&#34;meta&#34;:{&#34;hits&#34;:345,&#34;offset&#34;:0,&#34;time&#34;:8}}}&#39;
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Working-With">Working With<a class="anchor-link" href="#Working-With">&#182;</a></h1><p><img src="./images/json.png"></p>
+<h1 id="Working-With">Working With<a class="anchor-link" href="#Working-With">&#182;</a></h1><p><img src="../images/json.png"></p>
 
 </div>
 </div>
@@ -12217,436 +12058,7 @@ The 500 series means "server error" — your request may have been OK, but the s
 </div>
 </div>
 </div>
-</aside></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Convert response to JSON</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="n">data</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[26]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&#39;copyright&#39;: &#39;Copyright (c) 2018 The New York Times Company. All Rights Reserved.&#39;,
- &#39;response&#39;: {&#39;docs&#39;: [{&#39;byline&#39;: {&#39;organization&#39;: None,
-     &#39;original&#39;: &#39;By KAREN ZRAICK and DAVID SCULL&#39;,
-     &#39;person&#39;: [{&#39;firstname&#39;: &#39;Karen&#39;,
-       &#39;lastname&#39;: &#39;ZRAICK&#39;,
-       &#39;middlename&#39;: None,
-       &#39;organization&#39;: &#39;&#39;,
-       &#39;qualifier&#39;: None,
-       &#39;rank&#39;: 1,
-       &#39;role&#39;: &#39;reported&#39;,
-       &#39;title&#39;: None},
-      {&#39;firstname&#39;: &#39;David&#39;,
-       &#39;lastname&#39;: &#39;SCULL&#39;,
-       &#39;middlename&#39;: None,
-       &#39;organization&#39;: &#39;&#39;,
-       &#39;qualifier&#39;: None,
-       &#39;rank&#39;: 2,
-       &#39;role&#39;: &#39;reported&#39;,
-       &#39;title&#39;: None}]},
-    &#39;headline&#39;: {&#39;content_kicker&#39;: None,
-     &#39;kicker&#39;: None,
-     &#39;main&#39;: &#39;Trump, Brenda Fitzgerald, Virginia: Your Wednesday Evening Briefing&#39;,
-     &#39;name&#39;: None,
-     &#39;print_headline&#39;: &#39;Your Evening Briefing&#39;,
-     &#39;seo&#39;: None,
-     &#39;sub&#39;: None},
-    &#39;pub_date&#39;: &#39;2018-01-31T22:57:59+0000&#39;,
-    &#39;score&#39;: 0.10885632},
-   {&#39;byline&#39;: {&#39;organization&#39;: &#39;THE ASSOCIATED PRESS&#39;,
-     &#39;original&#39;: &#39;By THE ASSOCIATED PRESS&#39;,
-     &#39;person&#39;: []},
-    &#39;headline&#39;: {&#39;content_kicker&#39;: None,
-     &#39;kicker&#39;: None,
-     &#39;main&#39;: &#34;Syria&#39;s Kurds Push US to Stop Turkish Assault on Key Enclave&#34;,
-     &#39;name&#39;: None,
-     &#39;print_headline&#39;: &#34;Syria&#39;s Kurds Push US to Stop Turkish Assault on Key Enclave&#34;,
-     &#39;seo&#39;: None,
-     &#39;sub&#39;: None},
-    &#39;pub_date&#39;: &#39;2018-01-31T22:24:34+0000&#39;,
-    &#39;score&#39;: 0.13910355},
-   {&#39;byline&#39;: {&#39;organization&#39;: &#39;REUTERS&#39;,
-     &#39;original&#39;: &#39;By REUTERS&#39;,
-     &#39;person&#39;: []},
-    &#39;headline&#39;: {&#39;content_kicker&#39;: None,
-     &#39;kicker&#39;: None,
-     &#39;main&#39;: &#39;Trump Asked No. 2 Justice Department Official Where Russia Probe Was Heading: CNN&#39;,
-     &#39;name&#39;: None,
-     &#39;print_headline&#39;: &#39;Trump Asked No. 2 Justice Department Official Where Russia Probe Was Heading: CNN&#39;,
-     &#39;seo&#39;: None,
-     &#39;sub&#39;: None},
-    &#39;pub_date&#39;: &#39;2018-01-31T21:18:38+0000&#39;,
-    &#39;score&#39;: 1.1794378},
-   {&#39;byline&#39;: {&#39;organization&#39;: &#39;REUTERS&#39;,
-     &#39;original&#39;: &#39;By REUTERS&#39;,
-     &#39;person&#39;: []},
-    &#39;headline&#39;: {&#39;content_kicker&#39;: None,
-     &#39;kicker&#39;: None,
-     &#39;main&#39;: &#34;House Republican Nunes Calls FBI Objections to Memo &#39;Spurious&#39;&#34;,
-     &#39;name&#39;: None,
-     &#39;print_headline&#39;: &#34;House Republican Nunes Calls FBI Objections to Memo &#39;Spurious&#39;&#34;,
-     &#39;seo&#39;: None,
-     &#39;sub&#39;: None},
-    &#39;pub_date&#39;: &#39;2018-01-31T20:33:42+0000&#39;,
-    &#39;score&#39;: 0.34922355},
-   {&#39;byline&#39;: {&#39;organization&#39;: None,
-     &#39;original&#39;: &#39;By CHARLES R. KESLER&#39;,
-     &#39;person&#39;: [{&#39;firstname&#39;: &#39;Charles&#39;,
-       &#39;lastname&#39;: &#39;KESLER&#39;,
-       &#39;middlename&#39;: &#39;R.&#39;,
-       &#39;organization&#39;: &#39;&#39;,
-       &#39;qualifier&#39;: None,
-       &#39;rank&#39;: 1,
-       &#39;role&#39;: &#39;reported&#39;,
-       &#39;title&#39;: None}]},
-    &#39;headline&#39;: {&#39;content_kicker&#39;: &#39;Op-Ed Contributor&#39;,
-     &#39;kicker&#39;: &#39;Op-Ed Contributor&#39;,
-     &#39;main&#39;: &#39;Trump’s Debt to Reagan&#39;,
-     &#39;name&#39;: None,
-     &#39;print_headline&#39;: &#39;Trump’s Debt to Reagan&#39;,
-     &#39;seo&#39;: None,
-     &#39;sub&#39;: None},
-    &#39;pub_date&#39;: &#39;2018-01-31T19:46:01+0000&#39;,
-    &#39;score&#39;: 0.24041903},
-   {&#39;byline&#39;: {&#39;organization&#39;: None,
-     &#39;original&#39;: &#39;By ANNA DUBENKO&#39;,
-     &#39;person&#39;: [{&#39;firstname&#39;: &#39;Anna&#39;,
-       &#39;lastname&#39;: &#39;DUBENKO&#39;,
-       &#39;middlename&#39;: None,
-       &#39;organization&#39;: &#39;&#39;,
-       &#39;qualifier&#39;: None,
-       &#39;rank&#39;: 1,
-       &#39;role&#39;: &#39;reported&#39;,
-       &#39;title&#39;: None}]},
-    &#39;headline&#39;: {&#39;content_kicker&#39;: None,
-     &#39;kicker&#39;: None,
-     &#39;main&#39;: &#39;Right and Left React to Trump’s State of the Union Address&#39;,
-     &#39;name&#39;: None,
-     &#39;print_headline&#39;: &#39;Right and Left React to Trump’s State of the Union Address&#39;,
-     &#39;seo&#39;: None,
-     &#39;sub&#39;: None},
-    &#39;pub_date&#39;: &#39;2018-01-31T19:36:48+0000&#39;,
-    &#39;score&#39;: 0.19757682},
-   {&#39;byline&#39;: {&#39;organization&#39;: None,
-     &#39;original&#39;: &#39;By MARC STEIN&#39;,
-     &#39;person&#39;: [{&#39;firstname&#39;: &#39;Marc&#39;,
-       &#39;lastname&#39;: &#39;STEIN&#39;,
-       &#39;middlename&#39;: None,
-       &#39;organization&#39;: &#39;&#39;,
-       &#39;qualifier&#39;: None,
-       &#39;rank&#39;: 1,
-       &#39;role&#39;: &#39;reported&#39;,
-       &#39;title&#39;: None}]},
-    &#39;headline&#39;: {&#39;content_kicker&#39;: None,
-     &#39;kicker&#39;: None,
-     &#39;main&#39;: &#39;Geoff Cameron’s Car-Pool Confessional&#39;,
-     &#39;name&#39;: None,
-     &#39;print_headline&#39;: &#39;He Has Words for Bruce Arena&#39;,
-     &#39;seo&#39;: None,
-     &#39;sub&#39;: None},
-    &#39;pub_date&#39;: &#39;2018-01-31T19:09:20+0000&#39;,
-    &#39;score&#39;: 0.07729989},
-   {&#39;byline&#39;: {&#39;organization&#39;: None,
-     &#39;original&#39;: &#39;By ADAM GOLDMAN and NICHOLAS FANDOS&#39;,
-     &#39;person&#39;: [{&#39;firstname&#39;: &#39;Adam&#39;,
-       &#39;lastname&#39;: &#39;GOLDMAN&#39;,
-       &#39;middlename&#39;: None,
-       &#39;organization&#39;: &#39;&#39;,
-       &#39;qualifier&#39;: None,
-       &#39;rank&#39;: 1,
-       &#39;role&#39;: &#39;reported&#39;,
-       &#39;title&#39;: None},
-      {&#39;firstname&#39;: &#39;Nicholas&#39;,
-       &#39;lastname&#39;: &#39;FANDOS&#39;,
-       &#39;middlename&#39;: None,
-       &#39;organization&#39;: &#39;&#39;,
-       &#39;qualifier&#39;: None,
-       &#39;rank&#39;: 2,
-       &#39;role&#39;: &#39;reported&#39;,
-       &#39;title&#39;: None}]},
-    &#39;headline&#39;: {&#39;content_kicker&#39;: None,
-     &#39;kicker&#39;: None,
-     &#39;main&#39;: &#39;F.B.I. Condemns Push to Release Secret Republican Memo&#39;,
-     &#39;name&#39;: None,
-     &#39;print_headline&#39;: &#39;F.B.I. Denounces House G.O.P. Push On Secret Memo&#39;,
-     &#39;seo&#39;: None,
-     &#39;sub&#39;: None},
-    &#39;pub_date&#39;: &#39;2018-01-31T18:12:53+0000&#39;,
-    &#39;score&#39;: 0.19954076},
-   {&#39;byline&#39;: {&#39;organization&#39;: &#39;THE ASSOCIATED PRESS&#39;,
-     &#39;original&#39;: &#39;By THE ASSOCIATED PRESS&#39;,
-     &#39;person&#39;: []},
-    &#39;headline&#39;: {&#39;content_kicker&#39;: None,
-     &#39;kicker&#39;: None,
-     &#39;main&#39;: &#39;GOP Congressman Who Led the Benghazi Probe Will Leave House&#39;,
-     &#39;name&#39;: None,
-     &#39;print_headline&#39;: &#39;GOP Congressman Who Led the Benghazi Probe Will Leave House&#39;,
-     &#39;seo&#39;: None,
-     &#39;sub&#39;: None},
-    &#39;pub_date&#39;: &#39;2018-01-31T17:48:33+0000&#39;,
-    &#39;score&#39;: 0.22039069},
-   {&#39;byline&#39;: {&#39;organization&#39;: None,
-     &#39;original&#39;: &#39;By CARL HULSE&#39;,
-     &#39;person&#39;: [{&#39;firstname&#39;: &#39;Carl&#39;,
-       &#39;lastname&#39;: &#39;HULSE&#39;,
-       &#39;middlename&#39;: None,
-       &#39;organization&#39;: &#39;&#39;,
-       &#39;qualifier&#39;: None,
-       &#39;rank&#39;: 1,
-       &#39;role&#39;: &#39;reported&#39;,
-       &#39;title&#39;: None}]},
-    &#39;headline&#39;: {&#39;content_kicker&#39;: &#39;On Washington&#39;,
-     &#39;kicker&#39;: &#39;On Washington&#39;,
-     &#39;main&#39;: &#39;From ‘New American Moment’ to Same Partisan Rancor&#39;,
-     &#39;name&#39;: None,
-     &#39;print_headline&#39;: &#39;We Now Resume  Regularly Scheduled Programming&#39;,
-     &#39;seo&#39;: None,
-     &#39;sub&#39;: None},
-    &#39;pub_date&#39;: &#39;2018-01-31T17:41:06+0000&#39;,
-    &#39;score&#39;: 0.24642736}],
-  &#39;meta&#39;: {&#39;hits&#39;: 345, &#39;offset&#39;: 0, &#39;time&#39;: 8}},
- &#39;status&#39;: &#39;OK&#39;}</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check the first article</span>
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;response&#39;</span><span class="p">][</span><span class="s1">&#39;docs&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&#39;byline&#39;: {&#39;organization&#39;: None,
-  &#39;original&#39;: &#39;By KAREN ZRAICK and DAVID SCULL&#39;,
-  &#39;person&#39;: [{&#39;firstname&#39;: &#39;Karen&#39;,
-    &#39;lastname&#39;: &#39;ZRAICK&#39;,
-    &#39;middlename&#39;: None,
-    &#39;organization&#39;: &#39;&#39;,
-    &#39;qualifier&#39;: None,
-    &#39;rank&#39;: 1,
-    &#39;role&#39;: &#39;reported&#39;,
-    &#39;title&#39;: None},
-   {&#39;firstname&#39;: &#39;David&#39;,
-    &#39;lastname&#39;: &#39;SCULL&#39;,
-    &#39;middlename&#39;: None,
-    &#39;organization&#39;: &#39;&#39;,
-    &#39;qualifier&#39;: None,
-    &#39;rank&#39;: 2,
-    &#39;role&#39;: &#39;reported&#39;,
-    &#39;title&#39;: None}]},
- &#39;headline&#39;: {&#39;content_kicker&#39;: None,
-  &#39;kicker&#39;: None,
-  &#39;main&#39;: &#39;Trump, Brenda Fitzgerald, Virginia: Your Wednesday Evening Briefing&#39;,
-  &#39;name&#39;: None,
-  &#39;print_headline&#39;: &#39;Your Evening Briefing&#39;,
-  &#39;seo&#39;: None,
-  &#39;sub&#39;: None},
- &#39;pub_date&#39;: &#39;2018-01-31T22:57:59+0000&#39;,
- &#39;score&#39;: 0.10885632}</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
-<span class="c1"># Save JSON to local drive</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./local_file_on_my_laptop.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./local_file_on_my_laptop.json.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_data</span><span class="p">:</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="JSON-to-CSV">JSON to CSV<a class="anchor-link" href="#JSON-to-CSV">&#182;</a></h1>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="k">def</span> <span class="nf">json_to_csv</span><span class="p">(</span><span class="n">json_file</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; </span>
-<span class="sd">    Function to take json file and return pandas datatable</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Get the useful part</span>
-    <span class="n">articles</span> <span class="o">=</span> <span class="n">json_file</span><span class="p">[</span><span class="s1">&#39;response&#39;</span><span class="p">][</span><span class="s1">&#39;docs&#39;</span><span class="p">]</span>
-
-    <span class="c1"># Find the column titles</span>
-    <span class="n">cols</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">articles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-
-    <span class="c1"># Creating new list</span>
-    <span class="n">row_list</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="c1"># Iterating through all articles and get their respective column value for </span>
-    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">articles</span><span class="p">:</span>
-        <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">col</span> <span class="o">!=</span> <span class="s1">&#39;headline&#39;</span><span class="p">:</span>
-                <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="s1">&#39;main&#39;</span><span class="p">])</span>
-        <span class="n">row_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
-
-    <span class="c1"># Creat a dataframe</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">row_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">df</span>
-
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">json_to_csv</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[29]:</div>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>headline</th>
-      <th>pub_date</th>
-      <th>byline</th>
-      <th>score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Trump, Brenda Fitzgerald, Virginia: Your Wedne...</td>
-      <td>2018-01-31T22:57:59+0000</td>
-      <td>{'original': 'By KAREN ZRAICK and DAVID SCULL'...</td>
-      <td>0.108856</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Syria's Kurds Push US to Stop Turkish Assault ...</td>
-      <td>2018-01-31T22:24:34+0000</td>
-      <td>{'original': 'By THE ASSOCIATED PRESS', 'perso...</td>
-      <td>0.139104</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Trump Asked No. 2 Justice Department Official ...</td>
-      <td>2018-01-31T21:18:38+0000</td>
-      <td>{'original': 'By REUTERS', 'person': [], 'orga...</td>
-      <td>1.179438</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>House Republican Nunes Calls FBI Objections to...</td>
-      <td>2018-01-31T20:33:42+0000</td>
-      <td>{'original': 'By REUTERS', 'person': [], 'orga...</td>
-      <td>0.349224</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Trump’s Debt to Reagan</td>
-      <td>2018-01-31T19:46:01+0000</td>
-      <td>{'original': 'By CHARLES R. KESLER', 'person':...</td>
-      <td>0.240419</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;./local_path_for_csv.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section></section><section><section>
+</aside></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>

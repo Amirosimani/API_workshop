@@ -2,6 +2,10 @@
 
 There is so much data out on the web, but who wants to copy-and-paste or scrape web pages? Knowing how to use APIs will let you explore and collect data in a reliable and efficient way.
 
+## Get API key
+
+get your API key from https://developer.nytimes.com
+
 ### Repo structure
 ```
 notebooks/API_workshop_presentation.ipynb     # notebook used during the hands-on tutorial

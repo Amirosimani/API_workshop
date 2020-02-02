@@ -8,9 +8,9 @@ get your API key from https://developer.nytimes.com
 
 ### Repo structure
 ```
-notebooks/API_workshop_presentation.ipynb     # notebook used during the hands-on tutorial
 notebooks/API_codes.ipynb                     # notebook containing all the codes
-API_workshop.slides.hmtl            # presentation slides in html
+slides/API_workshop_presentation.ipynb     # notebook used during the hands-on tutorial
+slides/API_workshop.slides.hmtl            # presentation slides in html
 images/                             # contains images for html presentation slides
 ```
 
